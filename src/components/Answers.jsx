@@ -1,4 +1,4 @@
-import PropsTypes from "prop-types"
+import PropTypes from "prop-types"
 import he from "he"
 
 export default function Answers({ qa, changePage }) {
@@ -48,6 +48,6 @@ export default function Answers({ qa, changePage }) {
 }
 
 Answers.propTypes = {
-  qa: PropsTypes.object,
-  changePage: PropsTypes.func
+  qa: PropTypes.object,
+  changePage: PropTypes.func
 }
