@@ -1,4 +1,4 @@
-import PropsTypes from "prop-types"
+import PropTypes from "prop-types"
 import React from "react"
 import he from "he"
 
@@ -73,6 +73,6 @@ export default function Questions({ changePage, fillQa }) {
 }
 
 Questions.propTypes = {
-  changePage: PropsTypes.func,
-  fillQa: PropsTypes.func
+  changePage: PropTypes.func,
+  fillQa: PropTypes.func
 }
