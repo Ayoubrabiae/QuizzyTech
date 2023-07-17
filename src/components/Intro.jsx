@@ -1,4 +1,4 @@
-import PropsTypes from "prop-types"
+import PropTypes from "prop-types"
 
 export default function Intro({ changePage }) {
   return (
@@ -16,5 +16,5 @@ export default function Intro({ changePage }) {
 }
 
 Intro.propTypes = {
-  changePage: PropsTypes.func
+  changePage: PropTypes.func
 }
