@@ -5,10 +5,7 @@ Quizzical is an interactive quiz game built with React that challenges your know
 ## Features
 
 - Engaging and interactive quiz experience
-- Wide range of computer science topics covered
 - Multiple-choice questions with instant feedback
-- Keep track of your score as you progress
-- Timer functionality to add an element of challenge
 - Responsive design for seamless gameplay across devices
 
 ## Demo
