@@ -1,5 +1,4 @@
 import PropTypes from "prop-types"
-import he from "he"
 
 export default function Answers({ qa, changePage }) {
   let correctAnsewrsCount = 0
@@ -9,19 +8,25 @@ export default function Answers({ qa, changePage }) {
     correctAnsewrs.push(e.correct_answer)
   })
 
+  function decode(text) {
+    const htmlElement = document.createElement("div")
+    htmlElement.innerHTML = text
+    return htmlElement.textContent
+  }
+
   return (
     <section className="questions answers">
       <div className="container">
         {qa.questions.map((e, index) => (
           <div key={index} className="question-area">
-            <h3 className="question" key={index}>{he.decode(e.question)}</h3>
+            <h3 className="question" key={index}>{decode(e.question)}</h3>
             <ul className="answers">
               {qa.randomQuestions[index].map((el, i) => (
                 <li
                   key={i}
                   className={el == correctAnsewrs[index] ? "correct" : el == qa.answers[index] && el !== correctAnsewrs[index] ? "incorrect" : ""}
                 >
-                  {he.decode(el)}
+                  {decode(el)}
                 </li>
               ))}
             </ul>
