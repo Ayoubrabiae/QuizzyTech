@@ -1,6 +1,5 @@
 import PropTypes from "prop-types"
 import React from "react"
-import he from "he"
 
 export default function Questions({ changePage, fillQa }) {
 
@@ -38,12 +37,18 @@ export default function Questions({ changePage, fillQa }) {
     })
   }
 
+  function decode(text) {
+    const htmlElement = document.createElement("div")
+    htmlElement.innerHTML = text
+    return htmlElement.textContent
+  }
+
   return (
     <section className="questions">
       <div className="container">
         {questions.map((e, index) => (
           <div key={index} className="question-area">
-            <h3 className="question" key={index}>{he.decode(e.question)}</h3>
+            <h3 className="question" key={index}>{decode(e.question)}</h3>
             <ul className="answers">
               {randomQuestions[index] && randomQuestions[index].map((el, i) => (
                 <li
@@ -51,7 +56,7 @@ export default function Questions({ changePage, fillQa }) {
                   onClick={() => addAnswers(index, el)}
                   className={answers[index] == el ? "active" : ""}
                 >
-                  {he.decode(el)}
+                  {decode(el)}
                 </li>
               ))}
             </ul>
