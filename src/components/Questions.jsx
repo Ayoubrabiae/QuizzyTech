@@ -1,13 +1,13 @@
 import PropTypes from "prop-types"
-import React from "react"
+import { useState, useEffect } from "react"
 
 export default function Questions({ changePage, fillQa }) {
 
-  const [questions, setQuestions] = React.useState([])
-  const [answers, setAnswers] = React.useState([])
-  const [randomQuestions, setRandomQuestions] = React.useState()
+  const [questions, setQuestions] = useState([])
+  const [answers, setAnswers] = useState([])
+  const [randomQuestions, setRandomQuestions] = useState()
 
-  React.useEffect(() => {
+  useEffect(() => {
     async function getQuestions() {
       const response = await fetch(`https://opentdb.com/api.php?amount=5&category=18&type=multiple`)
       const questions = await response.json()
@@ -18,7 +18,7 @@ export default function Questions({ changePage, fillQa }) {
     getQuestions()
   }, [])
 
-  React.useEffect(function randomizeQuestions() {
+  useEffect(function randomizeQuestions() {
     const questionsArr = []
     questions.forEach(e => {
       const questionArr = [...e.incorrect_answers]
