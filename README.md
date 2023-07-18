@@ -15,6 +15,11 @@ Quizzical is an interactive quiz game built with React that challenges your know
 
 You can play the game online at [Demo Link](https://ephemeral-dango-d6fa81.netlify.app/).
 
+## Screenshots
+
+![Quizzical Screenshot 1](/screenshots/intro.jpg)
+![Quizzical Screenshot 2](/screenshots/questions.jpg)
+![Quizzical Screenshot 3](/screenshots/answers.jpg)
 
 ## Contributing
 
